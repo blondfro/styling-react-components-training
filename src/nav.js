@@ -1,10 +1,11 @@
 import PropTypes from "prop-types";
 import React from "react";
+import Radium from "radium";
 // for inline styles:
 // import styles from "./inline-styles/nav-styles";
+import styles from "./radium-styles/nav-styles";
 
 function Nav(props) {
-  /*
   function getPrevStyles(props) {
     return props.hasPrevious ? styles.prev : styles.prevHidden;
   }
@@ -12,12 +13,19 @@ function Nav(props) {
   function getNextStyles(props) {
     return props.hasNext ? styles.next : styles.nextHidden;
   }
-*/
 
   return (
-    <div>
-      <button onClick={props.onPrevious}>&#10094;</button>
-      <button onClick={props.onNext}>&#10095;</button>
+    <div style={styles.root}>
+      <button
+        key="prev"
+        style={getPrevStyles(props)}
+        onClick={props.onPrevious}
+      >
+        &#10094;
+      </button>
+      <button key="next" style={getNextStyles(props)} onClick={props.onNext}>
+        &#10095;
+      </button>
     </div>
   );
 }
@@ -29,4 +37,4 @@ Nav.propTypes = {
   hasNext: PropTypes.bool
 };
 
-export default Nav;
+export default Radium(Nav);
