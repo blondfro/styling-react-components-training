@@ -3,13 +3,15 @@ import React from "react";
 // import Radium from "radium";
 // for inline styles:
 // import styles from "./inline-styles/slide-styles";
+import styleable from "react-styleable";
+import css from "./module-styles/slide.module.css";
 
-function Slide(props) {
+function Slide({ css, ...props }) {
   return (
-    <article style={props.style}>
+    <article className={css.root} style={props.style}>
       <img src={props.image} alt={props.title} />
-      <footer>
-        <h2>{props.title}</h2>
+      <footer className={css.footer}>
+        <h2 className={css.footer}>{props.title}</h2>
         <div>{props.children}</div>
       </footer>
     </article>
@@ -22,4 +24,4 @@ Slide.propTypes = {
   title: PropTypes.string
 };
 
-export default Slide;
+export default styleable(css)(Slide);

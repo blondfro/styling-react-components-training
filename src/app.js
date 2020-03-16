@@ -9,6 +9,7 @@ import Nav from "./nav.js";
 import Slide from "./slide.js";
 // for normal styles
 // import "./style-sheets/index.css";
+import "./module-styles/app.module.css";
 
 export default class DriftApp extends React.Component {
   constructor(props) {

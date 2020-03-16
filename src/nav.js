@@ -6,21 +6,26 @@ import classnames from "classnames";
 // import styles from "./inline-styles/nav-styles";
 // for radium styles
 // import styles from "./radium-styles/nav-styles";
+import styleable from "react-styleable";
+import css from "./module-styles/nav.module.css";
 
-// for use with radium and inline styles.
-function Nav(props) {
+function Nav({ css, ...props }) {
   function getPrevStyles(props) {
-    return {};
+    return props.hasPrevious ? css.prev : css.prevHidden;
   }
 
   function getNextStyles(props) {
-    return {};
+    return props.hasNext ? css.next : css.nextHidden;
   }
 
   return (
-    <div>
-      <button onClick={props.onPrevious}>&#10094;</button>
-      <button onClick={props.onNext}>&#10095;</button>
+    <div className={css.root}>
+      <button className={getPrevStyles(props)} onClick={props.onPrevious}>
+        &#10094;
+      </button>
+      <button className={getNextStyles(props)} onClick={props.onNext}>
+        &#10095;
+      </button>
     </div>
   );
 }
@@ -32,4 +37,4 @@ Nav.propTypes = {
   hasNext: PropTypes.bool
 };
 
-export default Nav;
+export default styleable(css)(Nav);
