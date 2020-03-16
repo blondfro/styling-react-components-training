@@ -4,5 +4,5 @@ import React from "react";
 // import styles from "./inline-styles/frame-styles";
 
 export default function Frame({ children }) {
-  return <div className="dft__frame">{children}</div>;
+  return <div>{children}</div>;
 }

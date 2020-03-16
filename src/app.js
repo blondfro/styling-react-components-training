@@ -7,7 +7,8 @@ import Carousel from "./carousel.js";
 import Frame from "./frame.js";
 import Nav from "./nav.js";
 import Slide from "./slide.js";
-import "./style-sheets/index.css";
+// for normal styles
+// import "./style-sheets/index.css";
 
 export default class DriftApp extends React.Component {
   constructor(props) {
@@ -40,13 +41,12 @@ export default class DriftApp extends React.Component {
     );
   }
   render() {
-    const imageWidth = 640; // from css.
     return (
       <Frame>
         <Carousel
           showIndex={this.state.showIndex}
           nav={this.renderNav()}
-          width={imageWidth}
+          width={640}
         >
           <Slide image={require("./images/1.jpg")} title="Imperial Mockery">
             In a show of defiance, rebels have again made mockery of the majesty
