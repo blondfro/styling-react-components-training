@@ -1,0 +1,93 @@
+@keyframes pulse {
+    0% { transform: scale3d(1, 1, 1)}
+    15% { transform: scale3d(1.05, 1.05, 1.05)}
+    100% { transform: scale3d(1, 1, 1)}
+}
+
+.dft__nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+}
+
+.dft__nav__btn {
+    flex: 1;
+    height: var(--imageHeight);
+    font-size: 50px;
+    background: transparent;
+    border: none;
+    color: #fff;
+    padding: 20px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+    outline: 0;
+    cursor: pointer;
+    user-select: none;
+    animation: pulse 1s infinite;
+}
+
+.dft__nav__btn:hover {
+    transition: all 0.5s;
+    color: #8c9ea3;
+}
+
+.dft__nav__btn--prev {
+    text-align: left;
+}
+
+.dft__nav__btn--next {
+    text-align: right;
+}
+
+.dft__nav__btn--hidden {
+    visibility: hidden;
+}
+
+/*const btn = {*/
+/*    flex: 1,*/
+/*    height: configSyles.imageHeight,*/
+/*    padding: 20,*/
+/*    fontSize: 50,*/
+/*    background: "transparent",*/
+/*    color: "#fff",*/
+/*    textShadow: "1px 1px 3px rgba(0, 0, 0, 0.6)",*/
+/*    border: "none",*/
+/*    outline: 0,*/
+/*    cursor: "pointer",*/
+/*    userSelect: "none"*/
+/*};*/
+
+/*const prev = {*/
+/*...btn,*/
+/*textAlign: "left"*/
+/*};*/
+
+/*const next = {*/
+/*...btn,*/
+/*textAlign: "right"*/
+/*};*/
+
+/*const hidden = {*/
+/*    visibility: "hidden"*/
+/*};*/
+
+/*export default {*/
+/*root: {*/
+/*    position: "absolute",*/
+/*    top: 0,*/
+/*    left: 0,*/
+/*    width: "100%",*/
+/*    display: "flex"*/
+/*},*/
+/*prev,*/
+/*prevHidden: {*/
+/*...prev,*/
+/*...hidden*/
+/*},*/
+/*next,*/
+/*nextHidden: {*/
+/*...next,*/
+/*...hidden*/
+/*}*/
+/*};*/
