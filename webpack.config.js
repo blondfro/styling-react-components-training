@@ -1,15 +1,15 @@
-const path = require('path')
+const path = require("path");
 
-const include = path.join(__dirname, 'src')
+const include = path.join(__dirname, "src");
 
 module.exports = {
-  devtool: 'source-map',
-  mode: 'development',
-  entry: ['./src/index'],
+  devtool: "source-map",
+  mode: "development",
+  entry: ["./src/index"],
   output: {
-    path: path.join(__dirname, 'dist'),
-    filename: 'bundle.js',
-    publicPath: '/static/'
+    path: path.join(__dirname, "dist"),
+    filename: "bundle.js",
+    publicPath: "/static/"
   },
   devServer: {
     port: 3000
@@ -20,10 +20,10 @@ module.exports = {
         test: /\.js$/,
         loaders: [
           {
-            loader: 'babel-loader',
+            loader: "babel-loader",
             options: {
               babelrc: false,
-              presets: ['@babel/preset-react', '@babel/preset-env']
+              presets: ["@babel/preset-react", "@babel/preset-env"]
             }
           }
         ],
@@ -31,9 +31,14 @@ module.exports = {
       },
       {
         test: /\.jpg/,
-        loaders: ['file-loader'],
+        loaders: ["file-loader"],
+        include
+      },
+      {
+        test: /\.css/,
+        loaders: ["style-loader", "css-loader", "postcss-loader"],
         include
       }
     ]
   }
-}
+};
